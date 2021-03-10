@@ -7,6 +7,8 @@ An asynchronous data stream that sequentially emits values and completes normall
 
 By default, flows are sequential and all flow operations are executed sequentially in the same coroutine
 
+The `Flow` interface does not carry information whether a flow is a *cold* stream that can be collected repeatedly and triggers execution of the same code every time it is collected, or if it is a hot stream that emits different values from the same running source on each collection.
+
 ## [업스트림 (네트워크)](https://ko.wikipedia.org/wiki/%EC%97%85%EC%8A%A4%ED%8A%B8%EB%A6%BC_(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC))
 
 By default, flows are *sequential* and all flow operations are executed sequentially in the same coroutine, with an exception for a few operations specifically designed to introduce concurrency into flow execution such as [buffer](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/buffer.html) and [flatMapMerge](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flat-map-merge.html).
